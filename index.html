@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic HTML Template</title>
+  <meta name="description" content="A simple, clean starting template for a static webpage">
+
+  <!-- Simple styling for the template (internal CSS) -->
+  <style>
+    :root{
+      --max-width:1100px;
+      --accent:#0066cc;
+      --muted:#666;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;line-height:1.6;color:#222;display:flex;flex-direction:column;min-height:100vh}
+    header{background:linear-gradient(90deg,#f7fbff,#ffffff);border-bottom:1px solid #eee}
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:1rem}
+    nav{display:flex;gap:1rem;align-items:center}
+    a.logo{font-weight:700;color:var(--accent);text-decoration:none}
+    main{flex:1;padding:2rem 1rem}
+    .hero{padding:2rem;background:#f8f9fb;border-radius:8px}
+    footer{text-align:center;padding:1rem;border-top:1px solid #eee;color:var(--muted)}
+    .btn{display:inline-block;padding:0.5rem 0.9rem;border-radius:6px;text-decoration:none;border:1px solid var(--accent);color:var(--accent)}
+    @media (max-width:600px){nav{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">MySite</a>
+        <div style="flex:1"></div>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome to your basic HTML template</h1>
+      <p style="color:var(--muted)">This is a minimal, well-commented starting point for small projects, prototypes or learning HTML/CSS/JS.</p>
+      <p>
+        <a class="btn" href="#get-started">Get started</a>
+      </p>
+    </section>
+
+    <section id="features" style="margin-top:1.5rem">
+      <h2>Features</h2>
+      <ul>
+        <li>Responsive meta + simple layout</li>
+        <li>Internal CSS for quick edits</li>
+        <li>Small script area for interactive behavior</li>
+      </ul>
+    </section>
+
+    <section id="about" style="margin-top:1.5rem">
+      <h2>About</h2>
+      <p>Modify this template to suit your needs — add components, external stylesheets, frameworks or build tools as your project grows.</p>
+    </section>
+
+    <section id="contact" style="margin-top:1.5rem">
+      <h2>Contact</h2>
+      <form id="contact-form" onsubmit="handleSubmit(event)" style="max-width:560px">
+        <label for="name">Name</label><br>
+        <input id="name" name="name" type="text" required style="width:100%;padding:0.5rem;margin:0.25rem 0;border:1px solid #ddd;border-radius:4px"><br>
+        <label for="email">Email</label><br>
+        <input id="email" name="email" type="email" required style="width:100%;padding:0.5rem;margin:0.25rem 0;border:1px solid #ddd;border-radius:4px"><br>
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="4" style="width:100%;padding:0.5rem;margin:0.25rem 0;border:1px solid #ddd;border-radius:4px"></textarea><br>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> MySite — Built with a simple HTML template</div>
+  </footer>
+
+  <!-- Small JS for interactivity -->
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Example form handler (prevents real submission)
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      alert('Thanks, ' + (name || 'friend') + '! This form is a demo and does not submit anywhere.');
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
