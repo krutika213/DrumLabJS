@@ -1,2 +1,2 @@
 # krutika213.github.io
-Pages
+Hi 👋, I'm Krutika
