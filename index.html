@@ -1,70 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Drum Kit — Expanded</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drum Kit</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="app">
-    <section class="panel">
-      <h1 class="title">Drum Kit</h1>
-      <p class="subtitle">Play drums with keys or mouse. Record, adjust volume & speed, and watch the visualizer.</p>
+  <div class="container">
+    <h1>Drum Kit</h1>
+    <p>Play drums with keys or mouse. Record, adjust volume & speed, and watch the visualizer.</p>
 
-      <div class="controls">
-        <label class="control">
-          Volume
-          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
-        </label>
-
-        <label class="control">
-          Speed
-          <input id="speed" type="range" min="0.5" max="1.75" step="0.01" value="1">
-        </label>
-
-        <div class="buttons">
-          <button id="recordBtn" class="btn">Record</button>
-          <button id="stopBtn" class="btn" disabled>Stop</button>
-          <button id="playBtn" class="btn" disabled>Play</button>
-          <button id="clearBtn" class="btn" disabled>Clear</button>
-        </div>
+    <div class="controls">
+      <label>Volume <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8"></label>
+      <label>Speed <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1"></label>
+      <div class="recording-buttons">
+        <button id="record">Record</button>
+        <button id="stop" disabled>Stop</button>
+        <button id="play" disabled>Play</button>
+        <button id="clear" disabled>Clear</button>
       </div>
+    </div>
 
-      <div class="keys-grid" id="keysGrid">
-        <!-- Each .key has data-key set to the letter; audio elements use the same letter -->
-        <div class="key" data-key="A"><span class="kbd">A</span><span class="label">Kick</span></div>
-        <div class="key" data-key="S"><span class="kbd">S</span><span class="label">Snare</span></div>
-        <div class="key" data-key="D"><span class="kbd">D</span><span class="label">Tom 1</span></div>
-        <div class="key" data-key="F"><span class="kbd">F</span><span class="label">Tom 2</span></div>
-        <div class="key" data-key="G"><span class="kbd">G</span><span class="label">Tom 3</span></div>
-        <div class="key" data-key="H"><span class="kbd">H</span><span class="label">Open Hat</span></div>
-        <div class="key" data-key="J"><span class="kbd">J</span><span class="label">Closed Hat</span></div>
-        <div class="key" data-key="K"><span class="kbd">K</span><span class="label">Crash</span></div>
-        <div class="key" data-key="L"><span class="kbd">L</span><span class="label">Ride</span></div>
-        <div class="key" data-key=";"><span class="kbd">;</span><span class="label">Clap</span></div>
+    <div class="drum-grid">
+      <div class="key" data-key="A"><span class="kbd">A</span><span class="label">Kick</span></div>
+      <div class="key" data-key="S"><span class="kbd">S</span><span class="label">Snare</span></div>
+      <div class="key" data-key="D"><span class="kbd">D</span><span class="label">Tom 1</span></div>
+      <div class="key" data-key="F"><span class="kbd">F</span><span class="label">Tom 2</span></div>
+      <div class="key" data-key="G"><span class="kbd">G</span><span class="label">Tom 3</span></div>
+      <div class="key" data-key="H"><span class="kbd">H</span><span class="label">Open Hat</span></div>
+      <div class="key" data-key="J"><span class="kbd">J</span><span class="label">Closed Hat</span></div>
+      <div class="key" data-key="K"><span class="kbd">K</span><span class="label">Crash</span></div>
+      <div class="key" data-key="L"><span class="kbd">L</span><span class="label">Ride</span></div>
+      <div class="key" data-key=";"><span class="kbd">;</span><span class="label">Clap</span></div>
+      <canvas id="visualizer"></canvas>
+    </div>
 
-      <canvas id="visualizer" width="800" height="120" class="visualizer"></canvas>
+    <p class="tip">Tip: Click or press keys. First interaction activates audio on some browsers.</p>
+  </div>
 
-      <p class="hint">Tip: Click or press keys. First interaction activates audio on some browsers.</p>
-
-    </section>
-
-    <!-- audio elements (data-key values must match keys above) -->
-    <audio data-key="A" src="sounds/kick.wav"></audio>
-    <audio data-key="S" src="sounds/snare.wav"></audio>
-    <audio data-key="D" src="sounds/tom1.wav"></audio>
-    <audio data-key="F" src="sounds/tom2.wav"></audio>
-    <audio data-key="G" src="sounds/tom3.wav"></audio>
-    <audio data-key="H" src="sounds/openhat.wav"></audio>
-    <audio data-key="J" src="sounds/closedhat.wav"></audio>
-    <audio data-key="K" src="sounds/crash.wav"></audio>
-    <audio data-key="L" src="sounds/ride.wav"></audio>
-    <audio data-key=";" src="sounds/clap.wav"></audio>
-
-  </main>
+  <!-- Sounds -->
+  <audio data-key="A" src="sounds/kick.wav"></audio>
+  <audio data-key="S" src="sounds/snare.wav"></audio>
+  <audio data-key="D" src="sounds/tom1.wav"></audio>
+  <audio data-key="F" src="sounds/tom2.wav"></audio>
+  <audio data-key="G" src="sounds/tom3.wav"></audio>
+  <audio data-key="H" src="sounds/openhat.wav"></audio>
+  <audio data-key="J" src="sounds/closedhat.wav"></audio>
+  <audio data-key="K" src="sounds/crash.wav"></audio>
+  <audio data-key="L" src="sounds/ride.wav"></audio>
+  <audio data-key=";" src="sounds/clap.wav"></audio>
 
   <script src="script.js"></script>
 </body>
