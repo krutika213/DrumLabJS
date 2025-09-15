@@ -1,93 +1,60 @@
-html {
-  font-size: 10px;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  height: 100vh;
-  /* You can replace this URL with any image you like */
-  background-image: url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1650&q=80');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+body {
+  font-family: 'Arial', sans-serif;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  min-height: 100vh;
+  background: #1e293b;
+  color: white;
+  margin: 0;
 }
 
-/* Adds the dark, moody overlay */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: -1;
+.container {
+  text-align: center;
 }
 
 .keys {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .key {
-  border: 0.3rem solid rgba(0, 0, 0, 0.8);
-  border-radius: 0.5rem;
-  width: 10rem;
-  padding: 1rem 0.5rem;
-  text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  text-shadow: 0 0 0.5rem black;
-  transition: all 0.07s ease;
-  user-select: none;
-}
-
-/* This class is added by JavaScript */
-.playing {
-  transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.1s, box-shadow 0.1s;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  width: 80px;
 }
 
 .key kbd {
   display: block;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
-.sound {
-  font-size: 1.2rem;
+.key .sound {
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: #ffc600;
+  color: #facc15;
 }
 
-.info-box {
-  background-color: #26292e;
-  color: #ecf0f1;
-  padding: 2.5rem 3.5rem;
-  text-align: left;
+.key.playing {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #facc15;
+  border-color: #facc15;
+}
+
+h2 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+p {
   max-width: 400px;
-  border-radius: 5px;
-  margin-bottom: 5vh;
-}
-
-.info-box h1 {
-  margin: 0 0 1rem 0;
-  font-size: 2.8rem;
-  font-weight: 500;
-}
-
-.info-box p {
-  margin: 0;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #bdc3c7;
+  margin: auto;
+  color: #cbd5e1;
 }
