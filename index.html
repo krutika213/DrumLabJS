@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Drum Kit</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Drum Kit</h1>
-    <p>Play drums with keys or mouse. Record, adjust volume & speed, and watch the visualizer.</p>
+    <p class="desc">Play drums with keys or mouse. Record, adjust volume & speed, and watch the visualizer.</p>
 
     <div class="controls">
-      <label>Volume <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8"></label>
-      <label>Speed <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1"></label>
+      <label>Volume
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
+      </label>
+
+      <label>Speed
+        <input id="speed" type="range" min="0.5" max="2" step="0.05" value="1">
+      </label>
+
       <div class="recording-buttons">
         <button id="record">Record</button>
         <button id="stop" disabled>Stop</button>
@@ -33,13 +39,15 @@
       <div class="key" data-key="K"><span class="kbd">K</span><span class="label">Crash</span></div>
       <div class="key" data-key="L"><span class="kbd">L</span><span class="label">Ride</span></div>
       <div class="key" data-key=";"><span class="kbd">;</span><span class="label">Clap</span></div>
-      <canvas id="visualizer"></canvas>
+
+      <!-- full-width visualizer -->
+      <canvas id="visualizer" class="visualizer"></canvas>
     </div>
 
     <p class="tip">Tip: Click or press keys. First interaction activates audio on some browsers.</p>
   </div>
 
-  <!-- Sounds -->
+  <!-- audio elements -->
   <audio data-key="A" src="sounds/kick.wav"></audio>
   <audio data-key="S" src="sounds/snare.wav"></audio>
   <audio data-key="D" src="sounds/tom1.wav"></audio>
