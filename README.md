@@ -1,24 +1,41 @@
-# 🥁 Drum Kit
+# Drum Kit — Expanded
 
-A fun **JavaScript project** that lets you play a drum kit in your browser using keyboard keys.  
-Each key is mapped to a different drum sound, and when pressed, it also shows a smooth visual effect.
+A prettier, expanded drum kit built with **Vanilla JavaScript**.
 
----
+## Features
+- 10 drum sounds mapped to keys + clickable buttons
+- Volume and speed (playback rate) controls
+- Record & playback your beat sequences
+- Canvas visualizer using Web Audio API
+- Responsive, modern UI (no frameworks)
 
-## 🚀 Features
-- Play drum sounds with **keyboard keys** (`D`, `F`, `G`, `H`, `J`).
-- Highlight animation when a key is pressed.
-- Responsive design with modern styling.
-- Built using **Vanilla JS**, no external libraries required.
-- Lightweight and easy to extend with more sounds.
+## Keys (default)
+| Key | Sound      |
+|-----|------------|
+| A   | Kick       |
+| S   | Snare      |
+| D   | Tom 1      |
+| F   | Tom 2      |
+| G   | Tom 3      |
+| H   | Open Hat   |
+| J   | Closed Hat |
+| K   | Crash      |
+| L   | Ride       |
+| ;   | Clap       |
 
----
+## Setup
+1. Download or clone the repo.
+2. Put the 10 sound files in `sounds/` with the names listed above.
+3. Open `index.html` in a browser.
+4. Click or press keys to play. Use Record/Stop/Play to create short loops.
 
-## 🎹 Key Mappings
-| Key | Sound    |
-|-----|----------|
-| D   | Kick     |
-| F   | OpenHat  |
-| G   | Boom     |
-| H   | Ride     |
-| J   | Snare    |
+## Sound sources
+Use the same sources as before: Freesound.org, 99Sounds, MusicRadar, SampleSwap, OpenGameArt. Make sure you respect licenses.
+
+## Extending
+- Swap or add more sounds (add audio tags + keys)
+- Add a metronome or export recorded clips
+- Add sample trimming & normalization for uniform loudness
+
+## License
+Free to use & modify.
