@@ -26,3 +26,14 @@ Each key is mapped to a different drum sound, and when pressed, it also shows a 
 ---
 
 ## 📂 Project Structure
+
+drum-kit/
+│── index.html # Main HTML structure
+│── style.css # Styling
+│── script.js # JavaScript logic
+│── sounds/ # Sound files
+├── kick.wav
+├── snare.wav
+├── boom.wav
+├── openhat.wav
+├── ride.wav
